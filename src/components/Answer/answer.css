@@ -1,0 +1,35 @@
+.answer-container {
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.answer-container ul {
+    width: 20%;
+    height: 20%;    
+}
+
+.answer-container li {
+    list-style: none;
+    border: 1px solid black;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.answer-container li:hover {
+    background-color: black;
+    color: white
+}
+
+.active {
+    background-color: blue
+}
+
+
+.anwser-incorrect {
+    background-color: red;
+}
+.anwser-correct {
+    background-color: green
+}

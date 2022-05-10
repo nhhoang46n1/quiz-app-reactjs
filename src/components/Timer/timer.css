@@ -1,0 +1,21 @@
+.timer-container {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    top: 0;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    font-size: 18px;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    background-color: #fff;
+    color: rgb(79, 70, 229);
+}
