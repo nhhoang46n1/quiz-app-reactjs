@@ -15,11 +15,12 @@ interface questionInterface {
   currentQuestion: number;
   userAnswer: any;
   isSubmitted: boolean;
+  currentQuestionIndex: number;
   handleNextQuestion: () => void;
   handlePreviousQuestion: () => void;
   handleSubmit: () => void;
   handleOnClickAnswer: (index: number) => void;
-  currentQuestionIndex: number;
+  retry: () => void;
 }
 
 const QuizContent: React.FC<questionInterface> = ({
@@ -33,33 +34,38 @@ const QuizContent: React.FC<questionInterface> = ({
   handlePreviousQuestion,
   handleSubmit,
   handleOnClickAnswer,
+  retry,
 }) => {
   return (
-    <div className="question-container">
-      <div className="">
-        <div className="question-btn">
+    <div className="quiz-container">
+      <div className="quiz-content">
+        <div className="quiz-btn">
           <Button
             totalQuestions={totalQuestions}
             currentQuestion={currentQuestion}
             handleNextQuestion={handleNextQuestion}
             handlePreviousQuestion={handlePreviousQuestion}
             handleSubmit={handleSubmit}
+            retry={retry}
+            isSubmitted={isSubmitted}
           ></Button>
         </div>
-        <div className="timer-question">
-          <div className="timer">
-            <Timer />
-          </div>
-          <div>
-            <Question
-              question={question}
-              currentQuestion={currentQuestion}
-              totalQuestions={totalQuestions}
-            ></Question>
+        <div className="quiz-question-timer">
+          <div className="quiz-question-timer-container">
+            <div className="quiz-timer">
+              <Timer isSubmitted={isSubmitted} />
+            </div>
+            <div className="quiz-question">
+              <Question
+                question={question}
+                currentQuestion={currentQuestion}
+                totalQuestions={totalQuestions}
+              ></Question>
+            </div>
           </div>
         </div>
 
-        <div className="answer">
+        <div className="quiz-answer">
           <Answer
             answers={question.answers}
             handleOnClickAnswer={handleOnClickAnswer}

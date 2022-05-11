@@ -3,11 +3,8 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1px solid #ccc;
-    top: 0;
-    right: 50%;
-    transform: translate(50%, -50%);
-    background-color: #fff;
+    border: 5px solid green;
+    background-color: white;
     font-size: 18px;
 }
 
@@ -16,6 +13,8 @@
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    background-color: #fff;
-    color: rgb(79, 70, 229);
+    background-color: white;
+    color: black;
+    font-weight: 600;
+    
 }

@@ -1,0 +1,27 @@
+.next-btn {
+  margin: 0 10px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  color: black;
+  background-color: #fc6a03;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  font-weight: 600;
+  margin: 0 5px
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none ;
+}

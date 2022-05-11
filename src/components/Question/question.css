@@ -1,0 +1,11 @@
+
+
+.question-content {
+    text-align: center;
+}
+
+.question-content .total-questions {
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: black
+}

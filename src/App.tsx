@@ -6,7 +6,7 @@ import QuizScreen from "./components/QuizScreen";
 const App: React.FC = () => {
   const [isQuizStarted, setIsQuizStarted] = useState(false);
   return (
-    <div className="quiz-container">
+    <div className="">
       {isQuizStarted ? (
         <QuizScreen retry={() => setIsQuizStarted(false)} />
       ) : (

@@ -23,12 +23,11 @@ html {
 
     filter: brightness(0.95);
     z-index: 999;
-    transition: all 1s ease
 }
 
 
 .start-screen-container {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 25%;
     transform: translateX(-50%) translateY(-50%);
@@ -38,27 +37,22 @@ html {
     width: 40%;
     height: 50%;
 
-
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .start-screen-container p {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translateX(-50%);
-
+    text-align: center;
     letter-spacing: 6px;
     font-size: 56px;
     font-weight: 600;
 }
 
 .start-screen-container button {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
-
+    
     width: 50%;
     height: 30%;
     border: 4px solid #ccc;

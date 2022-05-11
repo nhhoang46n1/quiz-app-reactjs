@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 interface resultScreenInterface {
   retry: () => void;
@@ -14,11 +15,15 @@ const ResultScreen: React.FC<resultScreenInterface> = ({
     setShowResultScreen(false);
   };
   return (
-    <div>
-      <div>Result Screen</div>
-      <p>Your Score: {scoreQuiz}</p>
-      <button onClick={retry}>Try Again</button>
-      <button onClick={handleClickReview}>Review</button>
+    <div className="result-container">
+      <div className="result-content">
+        <h2>Result Screen</h2>
+        <p>Your Score: {scoreQuiz}</p>
+        <div className="result-btn ">
+          <button className="btn"onClick={retry}>Try Again</button>
+          <button className="btn "onClick={handleClickReview}>Review</button>
+        </div>
+      </div>
     </div>
   );
 };

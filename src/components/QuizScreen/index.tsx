@@ -36,7 +36,6 @@ const QuizScreen: React.FC<retryInterface> = ({ retry }) => {
     setIsSubmitted(true);
     setShowResultScreen(true);
   };
-  console.log(scoreQuiz);
 
   const handleOnClickAnswer = (index: number) => {
     userAnswers[currentQuestionIndex] = index;
@@ -44,7 +43,7 @@ const QuizScreen: React.FC<retryInterface> = ({ retry }) => {
   };
 
   return (
-    <div className="quiz-screen">
+    <div className="">
       {showResultScreen ? (
         <ResultScreen
           retry={retry}
@@ -53,6 +52,7 @@ const QuizScreen: React.FC<retryInterface> = ({ retry }) => {
         />
       ) : (
         <QuizContent
+          retry={retry}
           question={QuestionList[currentQuestionIndex]}
           totalQuestions={QuestionList.length}
           currentQuestion={currentQuestionIndex + 1}

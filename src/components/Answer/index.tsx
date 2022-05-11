@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./answer.css";
 
 interface answerInterface {
@@ -13,7 +13,6 @@ const Answer: React.FC<answerInterface> = ({
   userAnswer,
   handleOnClickAnswer,
   isSubmitted,
-  currentQuestionIndex,
 }) => {
   return (
     <div className="answer-container">
@@ -23,13 +22,15 @@ const Answer: React.FC<answerInterface> = ({
             <li
               key={index}
               onClick={() => handleOnClickAnswer(index)}
-              className={`${isSubmitted && answer.correct && "anwser-correct"} 
+              className={`answer-hc 
+              ${userAnswer === index ? "active" : ""} 
+              ${isSubmitted && answer.correct && "anwser-correct"} 
               ${
                 isSubmitted &&
-                userAnswer !== answer.correct &&
                 userAnswer === index &&
-                "anwser-incorrect "
-              } ${userAnswer === index ? "active" : ""}`}
+                "anwser-incorrect"
+              } 
+              ${isSubmitted && "answer-disabled"}`}
             >
               {answer.answer_content}
             </li>

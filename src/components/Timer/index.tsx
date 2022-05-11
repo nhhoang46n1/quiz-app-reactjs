@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./timer.css";
 
-const Timer: React.FC = () => {
+interface timerInterface {
+  isSubmitted: boolean;
+}
+const Timer: React.FC<timerInterface> = ({ isSubmitted }) => {
   const intervalRef: any = useRef(null);
   const [timer, setTimer] = useState("00:00");
 
   function getTimeRemaining(endtime: any) {
     const d: any = new Date();
     const total = Date.parse(endtime) - Date.parse(d);
-    const minutes = Math.floor((total / 1000 / 60) % 60);
-    const seconds = Math.floor((total / 1000) % 60);
+    const minutes: number = Math.floor((total / 1000 / 60) % 60);
+    const seconds: number = Math.floor((total / 1000) % 60);
     return {
       total,
       minutes,
@@ -55,10 +58,9 @@ const Timer: React.FC = () => {
       }
     };
   }, []);
-
   return (
     <div className="timer-container shadow">
-      <div className="timer">{timer}</div>
+      <div className="timer">{isSubmitted ? "End" : timer}</div>
     </div>
   );
 };
